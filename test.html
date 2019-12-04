@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+    <script>
+
+
+        function m(x) {
+            let a = document.createElement('canvas').getContext('2d');
+            a.font = '9px Monaco';
+            a.fillText(x, y = i = 0, 20);
+            for (; i < 3600;) y += a.getImageData(0, 0, 30, 30).data[i++];
+            return y
+        }
+        // Assume input is in variable s and alert as output. Comparison function now expression.
+        let sampleString = " \`1234567890-=qwertyuiop[]\\asdfghjkl;\'zxcvbnm,./~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:\"ZXCVBNM<>?";
+        let sortedString = sampleString.split('').sort(function (a, b) {
+            return m(a) - m(b)
+        }).join('')
+
+        //alert(sortedString);
+
+        var output = sortedString.split('');
+        console.log(output);
+
+    </script>
+</head>
+<body>
+    <div id = 'out'></div>
+    <span id="ruler"></span>
+    <div id="Test">
+            abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+        </div>
+</body>
+</html>
